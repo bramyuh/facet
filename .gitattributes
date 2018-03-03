@@ -1,0 +1,2 @@
+generic/initrd filter=lfs diff=lfs merge=lfs -text
+generic/vmlinuz filter=lfs diff=lfs merge=lfs -text
