@@ -3,9 +3,10 @@ package { 'apache2':
 }
 
 service { 'apache2':
-  ensure => running
-  enable => true
+  ensure => running,
+  enable => true,
   require => Package['apache2'],
+}
 
 file { "/var/www/html/bcld/":
   ensure => "directory",
@@ -14,13 +15,13 @@ file { "/var/www/html/bcld/":
 
 file { "/var/www/html/bcld/vmlinuz":
   ensure => present,
-  source => /home/administrator/git/facet/generic/vmlinuz,
+  source => '/home/administrator/git/facet/generic/vmlinuz',
   require => File['/var/www/html/bcld'],
 }
 
 file { "/var/www/html/bcld/initrd":
-  ensure => present
-  source => /home/administrator/git/facet/generic/vmlinuz,
+  ensure => present,
+  source => '/home/administrator/git/facet/generic/initrd',
   require => File['/var/www/html/bcld'],
 }
 
